@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroClimate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">AgroClimate</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/Agri">News</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href='/login' id='log'>Login</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <h1>Welcome to AgroClimate</h1>
+            <p>Your gateway to innovative agricultural solutions.</p>
+            <a href="#features" class="cta-button">Explore Now</a>
+        </div>
+    </header>
+
+    <section id="features" class="section">
+        <h2>Features</h2>
+        <div class="card-container">
+            <div class="card">
+                <a href="/chatbot"><h3>AI Agriculture Advisor</h3></a>
+                <p>Get personalized agricultural advice and answers to your farming questions.</p>
+            </div>                      
+            <div class="card">
+                <a href="/home"><h3>Crop Recommendations</h3></a>
+                <p>Enter your location and crop type to get tailored recommendations for optimal yields.</p>
+            </div>
+            
+            <div class="card">
+               <a href="/wheather"> <h3>Weather Forecast</h3></a>
+                <p>Access accurate weather forecasts to plan your agricultural activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>AgroClimate is dedicated to providing top-notch agricultural solutions to farmers all over the world. Our mission is to make farming more efficient, sustainable, and profitable.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AgroClimate. All rights reserved.</p>
+    </footer>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+  
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+#about {
+    background: linear-gradient(135deg, #FFA500 0%, #FF6347 100%);
+}
+  
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    max-width: 300px;
+    text-align: left;
+    flex: 1 1 300px;
+    margin: 1em;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    text-decoration: none;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e5739a 0%, #a285b6 100%);
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+        margin: 1em 0;
+    }
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#log {
+    background: linear-gradient(135deg, #FFA500 0%, #FF6347 100%);
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#log:hover {
+    background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
+}
+
+nav ul li {
+    margin-left: 2em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Hero Section */
+.section {
+    padding: 3em 1em;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    margin: 1em;
+}
+
+header {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 5em 0;
+}
+
+header .hero-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #FFFFFF;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: #FFFFFF;
+}
+
+header .cta-button {
+    background: linear-gradient(135deg, #FFA500, #FF6347);
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    border-radius: 0.3em;
+}
+
+/* Section Styles */
+.section {
+    background: linear-gradient(135deg, #7FFF00, #32CD32, #006400);
+    padding: 3em 1em;
+    text-align: center;
+    color: #000;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+.section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: auto;
+    color: #000;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 1em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+    <script src="scripts.js"></script>
+</body>
+</html>

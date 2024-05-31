@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Advisory System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #7FFF00, #32CD32, #006400);;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            background: white;
+            padding: 2em;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+             background: linear-gradient(135deg, #7FFF00, #32CD32, #006400);
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agricultural Advisory System</h1>
+    </header>
+    <main>
+        <h2>Get Crop Recommendations</h2>
+        <form action="{{ url_for('recommendation') }}" method="POST">
+            <label for="crop">Crop:</label>
+            <input type="text" id="crop" name="crop" required>
+            <br>
+            <label for="weather">Current Weather:</label>
+            <input type="text" id="weather" name="weather" required>
+            <br>
+            <input type="submit" value="Get Recommendation">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agricultural Advisory System</p>
+    </footer>
+</body>
+</html>

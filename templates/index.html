@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1e5ab7;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="city" placeholder="Enter Your City">
+        <button onclick="getWeather()">Get Weather</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const city = document.getElementById('city').value;
+            const response = await fetch(`/weather?city=${city}`);
+            const data = await response.json();
+            const resultDiv = document.getElementById('result');
+
+            if (response.status === 200) {
+                const weather = data.weather[0].description;
+                const temperature = (data.main.temp - 273.15).toFixed(2);
+                resultDiv.innerHTML = `<p>Weather: ${weather}, Temperature: ${temperature}°C</p>`;
+            } else {
+                resultDiv.innerHTML = `<p>An error occurred: ${data.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
